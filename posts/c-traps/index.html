@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
+
+    <meta name="author" content="Haotian Fan">
+    <meta name="description" content="词法分析中的贪心法： 从左到右一个字符一个字符的读入，如果该字符可能组成一个符号，那么再读入下一个字符，判断已读入的两个字符组成的字符串是否可能是一个符号的组成部分。如果可能，继续读入下一个字符，重述上述判断。
+整型常量 如果一个整型常量的第一个字符是数字0，那么该常量将被视作八进制数。
+字符与字符串 用单引号引起的一个字符代表一个整数（ASCII），而用双引号引起的字符代表一个指向无名数组起始字符的指针。
+理解函数的声明 (fp)()为调用该函数的方式，ANSI C允许程序员将该式简写为fp()
+((void)(*)())0)() 编写一个独立运行于某种微处理器伤的C程序。当计算机启动时，硬件将调用首地址为0的子例程
+注意作为语句结束标志的分号 如果一个函数返回值为void，此时编译器会隐含的将函数返回值类型视作int类型">
+    <meta name="keywords" content="blog,developer,personal">
+
+    
+      <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
+    
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="C缺陷与陷阱"/>
+<meta name="twitter:description" content="词法分析中的贪心法： 从左到右一个字符一个字符的读入，如果该字符可能组成一个符号，那么再读入下一个字符，判断已读入的两个字符组成的字符串是否可能是一个符号的组成部分。如果可能，继续读入下一个字符，重述上述判断。
+整型常量 如果一个整型常量的第一个字符是数字0，那么该常量将被视作八进制数。
+字符与字符串 用单引号引起的一个字符代表一个整数（ASCII），而用双引号引起的字符代表一个指向无名数组起始字符的指针。
+理解函数的声明 (fp)()为调用该函数的方式，ANSI C允许程序员将该式简写为fp()
+((void)(*)())0)() 编写一个独立运行于某种微处理器伤的C程序。当计算机启动时，硬件将调用首地址为0的子例程
+注意作为语句结束标志的分号 如果一个函数返回值为void，此时编译器会隐含的将函数返回值类型视作int类型"/>
+
+    <meta property="og:title" content="C缺陷与陷阱" />
+<meta property="og:description" content="词法分析中的贪心法： 从左到右一个字符一个字符的读入，如果该字符可能组成一个符号，那么再读入下一个字符，判断已读入的两个字符组成的字符串是否可能是一个符号的组成部分。如果可能，继续读入下一个字符，重述上述判断。
+整型常量 如果一个整型常量的第一个字符是数字0，那么该常量将被视作八进制数。
+字符与字符串 用单引号引起的一个字符代表一个整数（ASCII），而用双引号引起的字符代表一个指向无名数组起始字符的指针。
+理解函数的声明 (fp)()为调用该函数的方式，ANSI C允许程序员将该式简写为fp()
+((void)(*)())0)() 编写一个独立运行于某种微处理器伤的C程序。当计算机启动时，硬件将调用首地址为0的子例程
+注意作为语句结束标志的分号 如果一个函数返回值为void，此时编译器会隐含的将函数返回值类型视作int类型" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://flyfov.github.io/posts/c-traps/" />
+<meta property="article:published_time" content="2020-06-15T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-06-15T00:00:00+00:00" />
+
+
+    
+      <base href="https://flyfov.github.io/posts/c-traps/">
+    
+    <title>
+  C缺陷与陷阱 · Haotian Fan
+</title>
+
+    
+      <link rel="canonical" href="https://flyfov.github.io/posts/c-traps/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://flyfov.github.io/css/coder.min.3219ef62ae52679b7a9c19043171c3cd9f523628c2a65f3ef247ee18836bc90b.css" integrity="sha256-MhnvYq5SZ5t6nBkEMXHDzZ9SNijCpl8&#43;8kfuGINryQs=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://flyfov.github.io/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://flyfov.github.io/images/favicon-16x16.png" sizes="16x16">
+
+    <meta name="generator" content="Hugo 0.72.0" />
+  </head>
+
+  
+  
+  <body class="colorscheme-light"
+        onload=" twemoji.parse(document.body); "
+  >
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://flyfov.github.io/">
+      Haotian Fan
+    </a>
+    
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://flyfov.github.io/about/">About</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://flyfov.github.io/posts/">Articles</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://flyfov.github.io/projects/">Projects</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://flyfov.github.io/contact/">Contact me</a>
+          </li>
+        
+      
+      
+        
+        
+        
+          
+        
+          
+            
+              <li class="navigation-item menu-separator">
+                <span>|</span>
+              </li>
+              
+            
+            <li class="navigation-item">
+              <a href="https://flyfov.github.io/pt-br/">Chinese</a>
+            </li>
+          
+        
+      
+    </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">C缺陷与陷阱</h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fas fa-calendar"></i>
+              <time datetime='2020-06-15T00:00:00Z'>
+                June 15, 2020
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fas fa-clock"></i>
+              1-minute read
+            </span>
+          </div>
+          
+          
+        </div>
+      </header>
+
+      <div>
+        
+        <p><strong>词法分析中的贪心法：</strong> 从左到右一个字符一个字符的读入，如果该字符可能组成一个符号，那么再读入下一个字符，判断已读入的两个字符组成的字符串是否可能是一个符号的组成部分。如果可能，继续读入下一个字符，重述上述判断。<br>
+<strong>整型常量</strong> 如果一个整型常量的第一个字符是数字0，那么该常量将被视作八进制数。<br>
+<strong>字符与字符串</strong> 用单引号引起的一个字符代表一个整数（ASCII），而用双引号引起的字符代表一个指向无名数组起始字符的指针。<br>
+<strong>理解函数的声明</strong> (<em>fp)()为调用该函数的方式，ANSI C允许程序员将该式简写为fp()<br>
+(</em>(void)(*)())0)() 编写一个独立运行于某种微处理器伤的C程序。当计算机启动时，硬件将调用首地址为0的子例程<br>
+<strong>注意作为语句结束标志的分号</strong> 如果一个函数返回值为void，此时编译器会隐含的将函数返回值类型视作int类型</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yourdiscussshortname" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+      </div>
+
+      
+  <footer class="footer">
+    <section class="container">
+      
+      
+        ©
+        
+          2019 -
+        
+        2020
+         Haotian Fan 
+      
+      
+         · 
+        Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+      
+      
+        
+      
+    </section>
+  </footer>
+
+    </main>
+
+    
+
+    
+
+    <script>
+(function(f, a, t, h, o, m){
+	a[h]=a[h]||function(){
+		(a[h].q=a[h].q||[]).push(arguments)
+	};
+	o=f.createElement('script'),
+	m=f.getElementsByTagName('script')[0];
+	o.async=1; o.src=t; o.id='fathom-script';
+	m.parentNode.insertBefore(o,m)
+})(document, window, '//analytics.example.com/tracker.js', 'fathom');
+fathom('set', 'siteId', 'ABCDE');
+fathom('trackPageview');
+</script>
+
+
+  </body>
+
+</html>

@@ -3,58 +3,106 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://flyfov.github.io/rsgofov.github.io/pt-br/categories/</loc>
+    <loc>https://flyfov.github.io/pt-br/categories/blog/</loc>
+    <lastmod>2018-12-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://flyfov.github.io/pt-br/categories/</loc>
+    <lastmod>2018-12-31T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://flyfov.github.io/rsgofov.github.io/categories/"
+                href="https://flyfov.github.io/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="https://flyfov.github.io/rsgofov.github.io/pt-br/categories/"
+                href="https://flyfov.github.io/pt-br/categories/"
                 />
   </url>
   
   <url>
-    <loc>https://flyfov.github.io/rsgofov.github.io/pt-br/</loc>
+    <loc>https://flyfov.github.io/pt-br/posts/dummy/</loc>
+    <lastmod>2018-12-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://flyfov.github.io/pt-br/tags/hugo/</loc>
+    <lastmod>2018-12-31T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://flyfov.github.io/rsgofov.github.io/"
+                href="https://flyfov.github.io/tags/hugo/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="https://flyfov.github.io/rsgofov.github.io/pt-br/"
+                href="https://flyfov.github.io/pt-br/tags/hugo/"
                 />
   </url>
   
   <url>
-    <loc>https://flyfov.github.io/rsgofov.github.io/pt-br/series/</loc>
+    <loc>https://flyfov.github.io/pt-br/tags/i18n/</loc>
+    <lastmod>2018-12-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://flyfov.github.io/pt-br/posts/</loc>
+    <lastmod>2018-12-31T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://flyfov.github.io/rsgofov.github.io/series/"
+                href="https://flyfov.github.io/posts/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="https://flyfov.github.io/rsgofov.github.io/pt-br/series/"
+                href="https://flyfov.github.io/pt-br/posts/"
                 />
   </url>
   
   <url>
-    <loc>https://flyfov.github.io/rsgofov.github.io/pt-br/tags/</loc>
+    <loc>https://flyfov.github.io/pt-br/tags/</loc>
+    <lastmod>2018-12-31T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://flyfov.github.io/rsgofov.github.io/tags/"
+                href="https://flyfov.github.io/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="https://flyfov.github.io/rsgofov.github.io/pt-br/tags/"
+                href="https://flyfov.github.io/pt-br/tags/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://flyfov.github.io/pt-br/</loc>
+    <lastmod>2018-12-31T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://flyfov.github.io/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt-br"
+                href="https://flyfov.github.io/pt-br/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://flyfov.github.io/pt-br/series/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://flyfov.github.io/series/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt-br"
+                href="https://flyfov.github.io/pt-br/series/"
                 />
   </url>
   

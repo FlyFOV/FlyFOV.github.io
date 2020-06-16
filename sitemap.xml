@@ -2,12 +2,16 @@
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	
 	<sitemap>
-	   	<loc>https://flyfov.github.io/rsgofov.github.io/en/sitemap.xml</loc>
+	   	<loc>https://flyfov.github.io/en/sitemap.xml</loc>
+		
+	   	<lastmod>2020-06-15T00:00:00+00:00</lastmod>
 		
 	</sitemap>
 	
 	<sitemap>
-	   	<loc>https://flyfov.github.io/rsgofov.github.io/pt-br/sitemap.xml</loc>
+	   	<loc>https://flyfov.github.io/pt-br/sitemap.xml</loc>
+		
+	   	<lastmod>2018-12-31T00:00:00+00:00</lastmod>
 		
 	</sitemap>
 	

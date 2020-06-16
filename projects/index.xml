@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on Haotian Fan</title>
+    <link>https://flyfov.github.io/projects/</link>
+    <description>Recent content in Projects on Haotian Fan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 12 Jun 2020 13:56:50 +0100</lastBuildDate>
+    
+	<atom:link href="https://flyfov.github.io/projects/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>EMG signal classification based on machine learning</title>
+      <link>https://flyfov.github.io/projects/emg/</link>
+      <pubDate>Fri, 12 Jun 2020 13:56:50 +0100</pubDate>
+      
+      <guid>https://flyfov.github.io/projects/emg/</guid>
+      <description>Intro </description>
+    </item>
+    
+    <item>
+      <title>Interactive Web Page of Coronavirus out break</title>
+      <link>https://flyfov.github.io/projects/coronavirus/</link>
+      <pubDate>Sun, 10 May 2020 13:56:50 +0100</pubDate>
+      
+      <guid>https://flyfov.github.io/projects/coronavirus/</guid>
+      <description>Introduction The project our team is working on is an interactive web page based on the recent Corona Virus outbreak, where users can learn about changes in air quality, human flow and so on before and after the outbreak,so that they are able to schedule their travel plans during the outbreak. During this gradually relieving-period, the covering capabilities of different regions vary from each other. So we used data on the number of people diagnosed in different areas to simulate the virus content(numbers) and realize part of data visualization to remind users keep far away from areas where they are still at risk.</description>
+    </item>
+    
+    <item>
+      <title>UAV communication deploy optimization based on reinforcement learning</title>
+      <link>https://flyfov.github.io/projects/dronerouteopt/</link>
+      <pubDate>Tue, 10 Sep 2019 13:56:50 +0100</pubDate>
+      
+      <guid>https://flyfov.github.io/projects/dronerouteopt/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
