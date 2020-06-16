@@ -1,37 +1,40 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Language" content="pt-br">
+    <meta http-equiv="Content-Language" content="en">
 
-    <meta name="author" content="范昊天">
-    <meta name="description" content="博客，项目，生活">
-    <meta name="keywords" content="博客，项目，生活">
+    <meta name="author" content="Haotian Fan">
+    <meta name="description" content="this is very good">
+    <meta name="keywords" content="blog,developer,personal">
 
     
       <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
     
 
     <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="范昊天"/>
-<meta name="twitter:description" content="博客，项目，生活"/>
+<meta name="twitter:title" content="Face recognition system acclerated by FPGA"/>
+<meta name="twitter:description" content="this is very good"/>
 
-    <meta property="og:title" content="范昊天" />
-<meta property="og:description" content="博客，项目，生活" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://flyfov.github.io/pt-br/" />
-<meta property="og:site_name" content="范昊天" />
+    <meta property="og:title" content="Face recognition system acclerated by FPGA" />
+<meta property="og:description" content="this is very good" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://flyfov.github.io/projects/face_recognition/" />
+<meta property="article:published_time" content="2017-12-12T13:56:50+01:00" />
+<meta property="article:modified_time" content="2017-12-12T13:56:50+01:00" />
 
-
-    
-      <base href="https://flyfov.github.io/pt-br/">
-    
-    <title>范昊天</title>
 
     
-      <link rel="canonical" href="https://flyfov.github.io/pt-br/">
+      <base href="https://flyfov.github.io/projects/face_recognition/">
+    
+    <title>
+  Face recognition system acclerated by FPGA · Haotian Fan
+</title>
+
+    
+      <link rel="canonical" href="https://flyfov.github.io/projects/face_recognition/">
     
 
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
@@ -55,7 +58,6 @@
     <link rel="icon" type="image/png" href="https://flyfov.github.io/images/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="https://flyfov.github.io/images/favicon-16x16.png" sizes="16x16">
 
-    <link rel="alternate" type="application/rss+xml" href="https://flyfov.github.io/pt-br/index.xml" title="范昊天" />
     <meta name="generator" content="Hugo 0.72.0" />
   </head>
 
@@ -67,8 +69,8 @@
     <main class="wrapper">
       <nav class="navigation">
   <section class="container">
-    <a class="navigation-title" href="https://flyfov.github.io/pt-br">
-      范昊天
+    <a class="navigation-title" href="https://flyfov.github.io/">
+      Haotian Fan
     </a>
     
     <input type="checkbox" id="menu-toggle" />
@@ -77,25 +79,27 @@
       
         
           <li class="navigation-item">
-            <a class="navigation-link" href="https://flyfov.github.io/pt-br/about/">Sobre</a>
+            <a class="navigation-link" href="https://flyfov.github.io/about/">About</a>
           </li>
         
           <li class="navigation-item">
-            <a class="navigation-link" href="https://flyfov.github.io/pt-br/posts/">Blog</a>
+            <a class="navigation-link" href="https://flyfov.github.io/posts/">Articles</a>
           </li>
         
           <li class="navigation-item">
-            <a class="navigation-link" href="https://flyfov.github.io/pt-br/projects/">Projetos</a>
+            <a class="navigation-link" href="https://flyfov.github.io/projects/">Projects</a>
           </li>
         
           <li class="navigation-item">
-            <a class="navigation-link" href="https://flyfov.github.io/pt-br/contact/">Contato</a>
+            <a class="navigation-link" href="https://flyfov.github.io/contact/">Contact me</a>
           </li>
         
       
       
         
         
+        
+          
         
           
             
@@ -105,7 +109,7 @@
               
             
             <li class="navigation-item">
-              <a href="https://flyfov.github.io/">English</a>
+              <a href="https://flyfov.github.io/pt-br/">Chinese</a>
             </li>
           
         
@@ -118,40 +122,26 @@
 
       <div class="content">
         
-  <section class="container centered">
-  <div class="about">
-    
-      
-        <div class="avatar"><img src="https://flyfov.github.io/images/profile.jpg" alt="avatar"></div>
-      
-    
-    
-    <h1>范昊天</h1>
-    <h2>伦敦国王学院毕业生，软件工程师</h2>
-    
-    <ul>
-      
-        
-          <li>
-            <a href="https://github.com/FlyFOV" aria-label="Github"   >
-              <i class="fab fa-github" aria-hidden="true"></i>
-            </a>
-          </li>
-        
-      
-        
-          <li>
-            <a href="https://www.linkedin.com/in/fan-haotian-940931193/" aria-label="LinkedIn"   >
-              <i class="fab fa-linkedin" aria-hidden="true"></i>
-            </a>
-          </li>
-        
-      
-    </ul>
-    
-  </div>
+  <section class="container page">
+  <article>
+    <header>
+      <h1>Face recognition system acclerated by FPGA</h1>
+    </header>
+
+    <h2 id="introduction">Introduction</h2>
+<p>This project using a MCU combined with FPGA to achieve face recognition in real time. FPGA is much more fast in data loads and processing, which can acclerate the face recognition process. We use CNN as the traning method to predict the result. The projct got a nation second prize in National Fpga contest.
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/POg5pSlbgfE" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+</p>
+<h2 id="certification">Certification</h2>
+<p><img src="https://flyfov.github.io/images/fpga.jpg" alt="Example image"></p>
+
+  </article>
 </section>
 
+  
 
       </div>
 
@@ -159,15 +149,13 @@
   <footer class="footer">
     <section class="container">
       
-        <p>风云再度变换.</p>
-      
       
         ©
         
           2019 -
         
         2020
-         范昊天 
+         Haotian Fan 
       
       
          · 
